@@ -8,7 +8,7 @@ Y=y*x;
 for value = Y
     if(value>4) 
         if(value<31)
-        fr = [fr value];
+            fr = [fr value];
         end
     end
 end
