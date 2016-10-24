@@ -13,10 +13,10 @@ for value = Y
     end
 end
 n=length(fr);
-tr=zeros(2*n,511);
+tr=zeros(2*n,532);
 i=1;
 while i<=n
-    for t=1:511;
+    for t=1:532;
      ref(1,t)=sin(2*pi*fr(i)*t/256);
      ref(2,t)=cos(2*pi*fr(i)*t/256);
     end

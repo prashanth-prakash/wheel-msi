@@ -3,6 +3,8 @@ clear all;
 S=[];
 k=0;
 X=dlmread('G:\DSP project\drive-download-20160921T174509Z\Mayank_ssvep\r9.txt');
+[b,a] = butter(4,[5/256 30/256],'bandpass');
+X = filter(b,a,X);
 z_act=zeros(140,1);
 i=1;
 z_act=[];
@@ -11,7 +13,7 @@ z_req=[ones(20,1)*1;ones(20,1)*2;ones(20,1)*3;ones(20,1)*4;ones(20,1)*5;ones(20,
 % z_req=flipud(z_req);
 % z_req(i)=ceil(i/20);
 % end
-% z_req=[ones(60,1)*2];
+% z_req=[ones(60,1)*1];
 out = buffer(X(:,18)',511,255);
 q = size(out);
 while(i<=q(2))
